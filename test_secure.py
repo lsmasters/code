@@ -7,6 +7,7 @@ Created on Thu May  2 15:19:14 2019
 """
 import unittest
 from unittest import mock
+import nose
 from nose.tools import *
 #import secure
 
