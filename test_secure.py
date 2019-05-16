@@ -5,12 +5,11 @@ Created on Thu May  2 15:19:14 2019
 
 @author: larry
 """
+
 import unittest
 from unittest import mock
-import nose
-from nose.tools import *
-#import secure
 
+#import secure
 
 class TestSecure(unittest.TestCase):
     #tests for the substitution algorithm for encode and decode
@@ -34,18 +33,18 @@ class TestSecure(unittest.TestCase):
     def test_getShift(self):
         original_input = mock.builtins.input
         mock.builtins.input = lambda _: 3
-        assert_equal(secure.getShift(),3)
+        self.assertEqual(secure.getShift(),3)
 
     #test for the shift algorithm
     def test_Shift_unShift(self):
         original_input = mock.builtins.input
         mock.builtins.input = lambda _: 3
-        assert_equal(secure.shift("abcdefg"),"defghij")
+        self.assertEqual(secure.shift("abcdefg"),"defghij")
 
     def test_Shift_unShift2(self):
         original_input = mock.builtins.input
         mock.builtins.input = lambda _: 5
-        assert_equal(secure.shift("abcdefg"),"fghijkl")
+        self.assertEqual(secure.shift("abcdefg"),"fghijkl")
 
 
 if __name__ == '__main__':
