@@ -6,4 +6,4 @@ steps:
   image: python
   commands:
   - pip install -r requirements.txt
-  - ./test_secure.py
+  - python test_secure.py
