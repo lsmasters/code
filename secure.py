@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-main is a program to demonstrate simple and complex encryption methods
+secure is a program to demonstrate simple and complex encryption methods
 Created on Thu May  9 15:16:12 2019
 
 @author: Larry Masters
