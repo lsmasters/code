@@ -3,7 +3,7 @@ name: python-3-4
 
 platform:
   os: windows
-  arch: ard64
+  arch: amd64
 
 steps:
 - name: test
@@ -19,7 +19,7 @@ name: python-3-7
 
 platform:
   os: windows
-  arch: ard64
+  arch: amd64
 
 steps:
 - name: test
