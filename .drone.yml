@@ -9,5 +9,4 @@ steps:
   - python test_secure.py
   - pip install -U pytest pytest-cov coverage codecov sphinx --use-mirrors
   - py.test --cov=./
-  - pip install -r requirements.txt
-  - python test_secure.py
+  
