@@ -1,9 +1,9 @@
 kind: pipeline
-name: default
+name: python-2
 
 steps:
 - name: test
-  image: python 3.7
+  image: python:2
   commands:
   - pip install -r requirements.txt
   - python test_secure.py
