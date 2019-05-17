@@ -9,8 +9,6 @@ steps:
 - name: test
   image: python:3.4
   commands:
-  - pip install -r requirements.txt
-  - python test_secure.py
   - pip install -U pytest pytest-cov coverage codecov sphinx --use-mirrors
   - python py.test --cov=./
   - codecov --token=f0beab50-863e-49cc-9f25-c505b4a2cd2e
@@ -26,9 +24,7 @@ steps:
 - name: test
   image: python:3.7
   commands:
-  - pip install -r requirements.txt
-  - python test_secure.py
   - pip install -U pytest pytest-cov coverage codecov sphinx --use-mirrors
-  - python py.test --cov=./
+  - python py.test --cov=./ --cov-report=html
   - codecov --token=f0beab50-863e-49cc-9f25-c505b4a2cd2e
 ---
