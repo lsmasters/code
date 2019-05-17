@@ -7,7 +7,7 @@ Created on Thu May  2 15:19:14 2019
 """
 
 import unittest
-from unittest import mock
+#from unittest import mock    not needed right now
 #import secure
 
 class TestSecure(unittest.TestCase):
