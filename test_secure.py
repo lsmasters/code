@@ -8,7 +8,7 @@ Created on Thu May  2 15:19:14 2019
 
 import unittest
 from unittest import mock
-import secure
+#import secure
 
 class TestSecure(unittest.TestCase):
     #tests for the substitution algorithm for encode and decode
