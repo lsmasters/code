@@ -2,7 +2,6 @@
 """
 secure is a program to demonstrate simple and complex encryption methods
 Created on Thu May  9 15:16:12 2019
-
 @author: Larry Masters
 """
 import os
@@ -30,8 +29,12 @@ def getShift26():
     done = False
     while not done:
         sh = int(input('Enter a shift key (1-25):  '))
+        if type(sh) not in [int]:
+            raise TypeError("The shift must be an integer between 1 and 25 inclusive")
         if sh > 0 and sh <= 25:
             done = True
+        else:
+            raise ValueError("The number must be from 1 to 25")
     return sh
 
 
