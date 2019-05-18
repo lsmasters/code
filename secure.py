@@ -26,7 +26,7 @@ def menu():
 
 
 # get the shift number
-def getShift():
+def getShift26():
     done = False
     while not done:
         sh = int(input('Enter a shift key (1-25):  '))
@@ -36,21 +36,19 @@ def getShift():
 
 
 # simple SHIFT encription with a shift of 3
-def shift(text):
-    shNum = getShift()
+def shift(text,sh):
     encode = ""
     for n in range(len(text)):
         num = ord(text[n])
-        encode = encode + chr(num + shNum)
+        encode = encode + chr(num + sh)
     return encode
 
 
-def unShift(text):
-    shNum = getShift()
+def unShift(text,sh):
     encode = ""
     for n in range(len(text)):
         num = ord(text[n])
-        encode = encode + chr(num - shNum)
+        encode = encode + chr(num - sh)
     return encode
 
 
@@ -81,21 +79,23 @@ def unSubs(text):
             encode = encode + text[n]
     return encode
 
+if __name__ == '__main__':
+    # method = menu()
 
-# method = menu()
-
-# get input string from user
-i = input("Enter the text to encode and then <return>:  ")
-# get encoded input
-enc = shift(i)
-print("The shift encriptions of \n", i, "\n is\n", enc)
-# get decoded output
-dec = unShift(enc)
-print("and the decription is \n", dec)
-enc = subs(i)
-print("substituted text is \n", enc)
-dec = unSubs(enc)
-print("and the decription is \n", dec)
-# keep output on monitor for a few seconds
-time.sleep(1)
-exit(0)
+    # get input string from user
+    i = input("Enter the text to encode and then <return>:  ")
+    #get shift number
+    s = getShift26()
+    # print encoded input
+    en = shift(i, s)
+    print("The shift encriptions of \n", i, "\n is\n", en)
+    # print decoded output
+    dec = unShift(en, s)
+    print("and the decription is \n", dec)
+    #print encoded substitution text
+    print("substituted text is \n", subs(i))
+    #print decoded substitution text
+    print("and the decription is \n", unSubs(subs(i)))
+    # keep output on monitor for a few seconds
+    time.sleep(1)
+    exit(0)

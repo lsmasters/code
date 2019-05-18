@@ -7,43 +7,42 @@ Created on Thu May  2 15:19:14 2019
 """
 
 import unittest
-#from unittest import mock    not needed right now
-#import secure
+from secure import subs, unSubs, shift, unShift, getShift26
+#from unittest import mock
+
 
 class TestSecure(unittest.TestCase):
-    #tests for the substitution algorithm for encode and decode
+
+    #integration tests for the substitution algorithm for encode and decode stages
     def test_SubsUnsubsText(self):
         t = "This is a test of the substitution algorithm."
-        self.assertEqual(t.upper(), secure.unSubs(secure.subs(t)))
+        self.assertEqual(t.upper(), unSubs(subs(t)))
 
     def test_SubsUnSubsNumbers(self):
         n = "This is a test with numbers.  1 5 3 7 0"
-        self.assertEqual(n.upper(), secure.unSubs(secure.subs(n)))
+        self.assertEqual(n.upper(), unSubs(subs(n)))
 
     def test_SubsUnSubsSynbols(self):
         s = "This is a test with symbols. !@#$%^&*()"
-        self.assertEqual(s.upper(), secure.unSubs(secure.subs(s)))
+        self.assertEqual(s.upper(), unSubs(subs(s)))
 
     def test_SubsUnSubsMixed(self):
         m = "This is a test with all. ? ! 1 4 7 3 9 2 45 ^ @"
-        self.assertEqual(m.upper(), secure.unSubs(secure.subs(m)))
+        self.assertEqual(m.upper(), unSubs(subs(m)))
     """""
-    #Test for the handling of the shift routine
+    #unit test for the handling of the shift routine
     def test_getShift(self):
         original_input = mock.builtins.input
         mock.builtins.input = lambda _: 3
         self.assertEqual(secure.getShift(), 3)
-
-    #test for the shift algorithm
-    def test_Shift_unShift(self):
-        original_input = mock.builtins.input
-        mock.builtins.input = lambda _: 3
-        self.assertEqual(secure.shift("abcdefg"), "defghij")
-
-    def test_Shift_unShift2(self):
-        original_input = mock.builtins.input
-        mock.builtins.input = lambda _: 5
-        self.assertEqual(secure.shift("abcdefg"), "fghijkl")
     """
+    #unit test for shift()
+    def test_shift(self):
+        self.assertEqual(shift("abcdefg",3), "defghij")
+
+    def test_shift2(self):
+        self.assertEqual(shift("abcdefg", 5), "fghijkl")
+
+
 if __name__ == '__main__':
     unittest.main()
