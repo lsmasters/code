@@ -9,7 +9,7 @@ install:
   - pip install -r requirements.txt
 # command to run tests...cov for coveralls
 script:
-  - pytest --cov
+  - pytest --cov=YourModule/
 # sends to coveralls
 after_success:
   - coveralls
