@@ -7,6 +7,7 @@ python:
 # command to install dependencies
 install:
   - pip install -r requirements.txt
+  - pip install pytest-cov
 # command to run tests...cov for coveralls
 script:
   - pytest --cov=code/
