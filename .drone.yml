@@ -10,5 +10,5 @@ steps:
   image: python:3.4
   commands:
   - pip install -r requirements.txt
-  - python -m pytest -v
+  - python -m test_secure.py -v
   - codecov --token=f0beab50-863e-49cc-9f25-c505b4a2cd2e
