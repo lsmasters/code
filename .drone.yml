@@ -9,24 +9,6 @@ steps:
 - name: test
   image: python:3.4
   commands:
-  - #pip install -r requirements.txt
-  - #python test_secure
+  - pip install -r requirements.txt
   - python -m pytest -v
   - codecov --token=f0beab50-863e-49cc-9f25-c505b4a2cd2e
----
-#ind: pipeline
-#name: python-3-7
-
-#platform:
- # os: windows
- # arch: amd64
-
-#steps:
-#- name: test
-#  image: python:3.7
-#  commands:
-  - #pip install -r requirements.txt
-  - #python test_secure
-#  - python -m pytest -v
-#  - codecov --token=f0beab50-863e-49cc-9f25-c505b4a2cd2e
-#---
