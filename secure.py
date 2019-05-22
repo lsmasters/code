@@ -10,16 +10,16 @@ import time
 
 # method to display the menu and return the selection
 def menu():
-    print("Encryption Methods")
-    print("1.  Shift encryption")
-    print("2.  Substitution encryption")
+    print("\n\nEncryption Methods")
+    print("1.  SHIFT encryption")
+    print("2.  SUBSTITUTION encryption")
     print("3.  xxxxxxxxxxxx encryption")
     print("4.  yyyyyyyyyyyy encryption")
-    print("5.  zzzzzzzzzzzz encryption")
+    print("5.  QUIT")
     answer = False
     while answer == False:
         meth = int(input("Select a number(1-5):  "))
-        if meth > 0 and meth <= 5:
+        if meth > 0 and meth <= 5 and meth == int(meth):
             answer = True
     return meth
 
@@ -83,22 +83,33 @@ def unSubs(text):
     return encode
 
 if __name__ == '__main__':
-    # method = menu()
+    q = False
+    while q == False:
+        method = int(menu())
+        #check for exit
+        if method == 5:
+            break
+        if method ==1 or method == 2:
+            # get input string from user
+            i = input("Enter the text to encode and then <return>:  ")
+        if method == 1:
+            #get shift number
+            s = getShift26()
+            # print encoded input
+            en = shift(i, s)
+            print("The shift encriptions of \n", i, "\n is\n", en)
+            # print decoded output
+            dec = unShift(en, s)
+            print("\nand the decription is \n", dec)
+        elif method == 2:
+            #print encoded substitution text
+            print("substituted text is \n", subs(i))
+            #print decoded substitution text
+            print("and the decription is \n", unSubs(subs(i)))
+        elif method == 3:
+            print ("\nThis method is not currently implemented.")
+        elif method == 4:
+            print("\nThis method is not currently implemented.")
+        else:
+            q = True
 
-    # get input string from user
-    i = input("Enter the text to encode and then <return>:  ")
-    #get shift number
-    s = getShift26()
-    # print encoded input
-    en = shift(i, s)
-    print("The shift encriptions of \n", i, "\n is\n", en)
-    # print decoded output
-    dec = unShift(en, s)
-    print("and the decription is \n", dec)
-    #print encoded substitution text
-    print("substituted text is \n", subs(i))
-    #print decoded substitution text
-    print("and the decription is \n", unSubs(subs(i)))
-    # keep output on monitor for a few seconds
-    time.sleep(1)
-    exit(0)
