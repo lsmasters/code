@@ -112,4 +112,4 @@ if __name__ == '__main__':
             print("\nThis method is not currently implemented.")
         else:
             q = True
-
+    exit(0)

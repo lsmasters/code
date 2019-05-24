@@ -1,6 +1,7 @@
 dist:  xenial  #enables >=3.7
 language: python
 python:
+  - "3.4"
   - "3.5"
   - "3.6"
   - "3.7"
@@ -12,6 +13,11 @@ install:
 # command to run tests...cov for coveralls
 script:
   - pytest --cov | coveralls
+  - uft_vb
 # sends to coveralls
 after_success:
   - coveralls
+deploy:
+  provider: pypi
+  user: $pypiLogin
+  password: $pypiPwd
