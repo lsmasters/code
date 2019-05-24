@@ -19,5 +19,5 @@ after_success:
   - coveralls
 deploy:
   provider: pypi
-  user: $pypiLogin
-  password: $pypiPwd
+  user: lmasters
+  password: Starstar49
