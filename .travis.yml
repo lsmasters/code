@@ -1,3 +1,4 @@
+include: uft.vb
 dist:  xenial  #enables >=3.7
 language: python
 python:
@@ -13,7 +14,7 @@ install:
 # command to run tests...cov for coveralls
 script:
   - pytest --cov | coveralls
-  - uft_vb
+  - uft
 # sends to coveralls
 after_success:
   - coveralls
