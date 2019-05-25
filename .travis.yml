@@ -21,4 +21,4 @@ deploy:
   provider: pypi
   user: lmasters
   password: Starstar49
-  - git add secure.py
+  skip_existing: true
