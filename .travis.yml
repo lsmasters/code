@@ -22,5 +22,5 @@ deploy:
   user: lmasters
   password: Starstar49
   on:
-    branch: master
+    python: 3.7
   skip_existing: true
