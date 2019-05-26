@@ -20,6 +20,7 @@ after_success:
   - git add -A
 deploy:
   provider: pypi
+  skip_cleanup: true
   user: lmasters
   password: Starstar49
   on:
