@@ -12,6 +12,9 @@ install:
   - pip install coveralls
   - pip install pytest-cov
 # command to run tests...cov for coveralls
+deploy:
+  provider: script
+  script: uft_vb.vbs
 script:
   - pytest --cov | coveralls
 # sends to coveralls
